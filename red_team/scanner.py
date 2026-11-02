@@ -3,11 +3,11 @@ import re
 ip_objetivo = "52.162.33.24"
 
 def escaneo_basico(objetivo):
-    resultado=subprocess.run(["nmap","-sS","-T4", objetivo], capture_output=True, text=True)
+    resultado=subprocess.run(["nmap","-sS","-Pn","-T4", objetivo], capture_output=True, text=True)
     return resultado.stdout
 
 def escaneo_avanzado(objetivo):
-    resultado=subprocess.run(["nmap","-A","-sV","-Pn","-T1",objetivo], capture_output=True, text=True)
+    resultado=subprocess.run(["nmap","-A","-sV","-Pn","-T3",objetivo], capture_output=True, text=True)
     return resultado.stdout
 
 def extraer_puertos(salida_nmap):
