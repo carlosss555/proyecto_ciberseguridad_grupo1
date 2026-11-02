@@ -7,7 +7,7 @@ def escaneo_basico(objetivo):
     return resultado.stdout
 
 def escaneo_avanzado(objetivo):
-    resultado=subprocess.run(["nmap","-A","-sV","-Pn","-T3",objetivo], capture_output=True, text=True)
+    resultado=subprocess.run(["nmap","-A","-sV","-Pn","-T2",objetivo], capture_output=True, text=True)
     return resultado.stdout
 
 def extraer_puertos(salida_nmap):

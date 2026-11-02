@@ -5,19 +5,19 @@ Objetivo: 52.162.33.24
 Resumen de puertos abiertos:
 
 Escaneo Basico(-sS)
-Starting Nmap 7.98 ( https://nmap.org ) at 2026-11-02 16:41 -0600
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-11-02 16:49 -0600
 Nmap scan report for 52.162.33.24
 Host is up (0.11s latency).
 Not shown: 999 filtered tcp ports (no-response)
 PORT   STATE SERVICE
 22/tcp open  ssh
 
-Nmap done: 1 IP address (1 host up) scanned in 11.14 seconds
+Nmap done: 1 IP address (1 host up) scanned in 11.67 seconds
 
 
-Escaneo Avanzado(-A -sV -Pn -T1)Starting Nmap 7.98 ( https://nmap.org ) at 2026-11-02 16:41 -0600
+Escaneo Avanzado(-A -sV -Pn -T1)Starting Nmap 7.98 ( https://nmap.org ) at 2026-11-02 16:49 -0600
 Nmap scan report for 52.162.33.24
-Host is up (0.12s latency).
+Host is up (0.17s latency).
 Not shown: 999 filtered tcp ports (no-response)
 PORT   STATE SERVICE VERSION
 22/tcp open  ssh     OpenSSH 9.6p1 Ubuntu 3ubuntu13.19 (Ubuntu Linux; protocol 2.0)
@@ -25,29 +25,25 @@ PORT   STATE SERVICE VERSION
 |   256 04:ce:65:71:60:38:b2:2d:d8:a6:55:f7:03:97:f9:01 (ECDSA)
 |_  256 f5:0b:c3:6d:fd:0b:ea:16:42:9d:8a:51:25:1e:47:4b (ED25519)
 Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
-Device type: general purpose
-Running (JUST GUESSING): Linux 4.X (85%)
-OS CPE: cpe:/o:linux:linux_kernel:4
-Aggressive OS guesses: Linux 4.19 - 5.15 (85%)
-No exact OS matches for host (test conditions non-ideal).
-Network Distance: 24 hops
+OS fingerprint not ideal because: Missing a closed TCP port so results incomplete
+No OS matches for host
+Network Distance: 25 hops
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 TRACEROUTE (using port 22/tcp)
 HOP RTT       ADDRESS
-1   2.00 ms   192.168.1.1
-2   60.00 ms  100.80.0.1
+1   43.00 ms  192.168.1.1
+2   10.00 ms  100.80.0.1
 3   ... 6
-7   104.00 ms be20.ibr01.fll30.ntwk.msn.net (104.44.22.131)
-8   103.00 ms be10.ibr02.atl31.ntwk.msn.net (104.44.30.37)
-9   119.00 ms be3.owr01.atl31.ntwk.msn.net (51.10.3.248)
-10  121.00 ms be3.owr02.atl31.ntwk.msn.net (51.10.3.244)
-11  105.00 ms be5.owr01.bna31.ntwk.msn.net (51.10.36.107)
-12  105.00 ms be4.owr02.chi10.ntwk.msn.net (51.10.2.96)
-13  103.00 ms be4.owr02.chi10.ntwk.msn.net (51.10.2.96)
-14  ... 23
-24  182.00 ms 52.162.33.24
+7   102.00 ms be20.ibr01.fll30.ntwk.msn.net (104.44.22.131)
+8   102.00 ms be8.ibr01.atl31.ntwk.msn.net (104.44.16.47)
+9   104.00 ms be3.owr02.atl31.ntwk.msn.net (51.10.3.244)
+10  103.00 ms be8.owr01.fty01.ntwk.msn.net (51.10.36.155)
+11  635.00 ms be5.owr01.bna31.ntwk.msn.net (51.10.36.107)
+12  435.00 ms be4.owr01.chi10.ntwk.msn.net (51.10.2.104)
+13  ... 24
+25  102.00 ms 52.162.33.24
 
 OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 32.74 seconds
+Nmap done: 1 IP address (1 host up) scanned in 1251.37 seconds
 
