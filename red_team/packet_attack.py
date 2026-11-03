@@ -89,13 +89,13 @@ def generar_syn():
     print("\nEnviando paquete SYN de prueba...")
 
     try:
-        # Armamos el paquete a mano: capa IP + capa TCP con la bandera SYN activa
+        
         paquete = IP(dst=ip_destino) / TCP(
             dport=puerto,
             flags="S"
         )
 
-        # sr1 manda el paquete y se queda esperando una sola respuesta
+        
         respuesta = sr1(paquete, timeout=3, verbose=False)
 
         if respuesta:
