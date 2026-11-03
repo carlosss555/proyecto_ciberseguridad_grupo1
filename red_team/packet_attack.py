@@ -15,7 +15,7 @@ def analizar_paquete(paquete):
         print("IP de origen:", origen)
         print("IP de destino:", destino)
 
-        # Caso TCP: nos interesa el puerto y las banderas (flags)
+        
         if TCP in paquete:
             puerto = paquete[TCP].dport
             flags = paquete[TCP].flags
@@ -24,7 +24,7 @@ def analizar_paquete(paquete):
             print("Puerto destino:", puerto)
             print("Flags:", flags)
 
-            # Una bandera SYN sola suele indicar intento de nueva conexión
+           
             if flags == "S":
                 print("ALERTA: Se detecto un paquete SYN")
 
@@ -32,14 +32,14 @@ def analizar_paquete(paquete):
             print("Protocolo: UDP")
             print("Puerto destino:", paquete[UDP].dport)
 
-        # Si hay una consulta DNS, extraemos qué dominio se está resolviendo
+        
         if DNS in paquete and paquete[DNS].qd:
             nombre = paquete[DNSQR].qname.decode(
                 errors="ignore"
             )
             print("Consulta DNS:", nombre)
 
-        # Puerto 80 sin cifrado, vale la pena marcarlo aparte
+        
         if TCP in paquete and paquete[TCP].dport == 80:
             print(" Trafico HTTP sin cifrar detectado")
 
@@ -48,7 +48,7 @@ def analizar_paquete(paquete):
         print("IP de origen:", paquete[ARP].psrc)
         print("IP de destino:", paquete[ARP].pdst)
 
-    # Dejamos un resumen de cada paquete como respaldo en disco
+    
     with open("evidencia_trafico.txt", "a", encoding="utf-8") as archivo:
         archivo.write(str(paquete.summary()) + "\n")
 
