@@ -41,7 +41,7 @@ Al enviar un paquete SYN dirigido al puerto 22/tcp de la VM objetivo, se confirm
 
 Adicionalmente, se intentó generar tráfico ICMP (ping) hacia la VM objetivo con fines de prueba, confirmándose que dicho tráfico es bloqueado por el Network Security Group (NSG) de Azure configurado por el equipo de Blue Team, coincidiendo con el comportamiento ya observado durante la fase de escaneo.
 
-Toda la captura fue almacenada en los archivos captura_trafico.pcap (formato estándar compatible con Wireshark) y evidencia_trafico.txt (resumen en texto plano de cada paquete analizado).
+Toda la captura fue almacenada en los archivos captura_trafico.pcap.
 
 3.3 Intento de acceso por fuerza bruta (ssh_brute.py)
 
