@@ -56,13 +56,14 @@ def analizar_paquete(paquete):
 def capturar_trafico():
     """Escucha la red por una cantidad de paquetes definida por el usuario."""
 
+    ip_objetivo = input("Ingrese la IP objetivo: ")
     cantidad = int(input("Cantidad de paquetes a capturar: "))
 
     print("\nIniciando captura de trafico...")
-    print("Presione Ctrl + C para detener la captura.\n")
 
     try:
         paquetes = sniff(
+            filter=f"host {ip_objetivo}",
             count=cantidad,
             prn=analizar_paquete,
             store=True
@@ -70,7 +71,6 @@ def capturar_trafico():
 
         paquetes_path = "captura_trafico.pcap"
 
-        # wrpcap guarda la captura en formato .pcap, para abrirla luego en Wireshark si hace falta
         from scapy.all import wrpcap
         wrpcap(paquetes_path, paquetes)
 
@@ -80,11 +80,10 @@ def capturar_trafico():
     except Exception as error:
         print("Error durante la captura:", error)
 
-
 def generar_syn():
     """Arma y envía un único paquete SYN hacia el objetivo indicado."""
 
-    ip_destino = input("Ingrese la IP de la VM Blue Team: ")
+    ip_destino = input("Ingrese la IP objetivo: ")
     puerto = int(input("Ingrese el puerto de prueba: "))
 
     print("\nEnviando paquete SYN de prueba...")
