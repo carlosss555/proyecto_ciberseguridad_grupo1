@@ -11,28 +11,13 @@ La máquina objetivo corresponde a una VM Ubuntu Linux ubicada en la dirección 
 
 Para el desarrollo del ataque seguimos una metodología estructurada en tres fases: reconocimiento, análisis de tráfico e intento de acceso.
 
-Fase 1 - Reconocimiento (scanner.py): Se desarrolló un script en Python que 
-automatiza el uso de Nmap mediante el módulo subprocess, con el fin de identificar 
-los puertos abiertos y servicios activos en la VM objetivo. Se ejecutaron dos tipos 
-de escaneo: uno SYN básico (-sS) para una identificación rápida de puertos, y uno 
-avanzado (-A -sV -Pn -T1) para obtener versiones de servicios, detección de sistema 
-operativo y un perfil más detallado del objetivo, priorizando el sigilo mediante 
-temporización lenta (-T1). El script genera automáticamente un reporte en texto con 
-el resumen de puertos abiertos encontrados.
+Fase 1 - Reconocimiento (scanner.py): Se desarrolló un script en Python que automatiza el uso de Nmap mediante el módulo subprocess, con el fin de identificar los puertos abiertos y servicios activos en la VM objetivo. Se ejecutaron dos tipos de escaneo: uno SYN básico (-sS) para una identificación rápida de puertos, y uno avanzado (-A -sV -Pn -T1) para obtener versiones de servicios, detección de sistema operativo y un perfil más detallado del objetivo, priorizando el sigilo mediante temporización lenta (-T1). El script genera automáticamente un reporte en texto con el resumen de puertos abiertos encontrados.
 
-Fase 2 - Análisis de tráfico (packet_attack.py): Utilizando la librería Scapy, se 
-capturó y analizó el tráfico de red relacionado con la VM objetivo, con el propósito 
-de identificar protocolos en uso, patrones de comunicación y posibles vectores de 
-ataque adicionales.
+Fase 2 - Análisis de tráfico (packet_attack.py): Utilizando la librería Scapy, se capturó y analizó el tráfico de red relacionado con la VM objetivo, con el propósitode identificar protocolos en uso, patrones de comunicación y posibles vectores de ataque adicionales.
 
-Fase 3 - Intento de acceso (ssh_brute.py): Se desarrolló un script basado en la 
-librería paramiko para realizar un ataque de diccionario contra el servicio SSH de 
-la VM objetivo, con el fin de evaluar la robustez de las credenciales configuradas 
-y la existencia de políticas de bloqueo ante múltiples intentos fallidos.
+Fase 3 - Intento de acceso (ssh_brute.py): Se desarrolló un script basado en la librería paramiko para realizar un ataque de diccionario contra el servicio SSH de la VM objetivo, con el fin de evaluar la robustez de las credenciales configuradas y la existencia de políticas de bloqueo ante múltiples intentos fallidos.
 
-Cada una de estas fases fue documentada mediante capturas de pantalla y registros 
-de salida, los cuales se incluyen como evidencia en la sección correspondiente de 
-este informe.
+Cada una de estas fases fue documentada mediante capturas de pantalla y registros de salida, los cuales se incluyen como evidencia en la sección correspondiente de este informe.
 
 3. Resultados
 
@@ -74,6 +59,10 @@ Scanner.py
 ![alt text](escaneo1.png)
 ![alt text](escaneo2.png)
 
+packet attack
+
+![alt text](SYN.png)
+![alt text](trafico1.png)
 
 ssh_brute
 ![alt text](sshbrute.png)
